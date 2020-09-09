@@ -45,6 +45,7 @@ class App extends Component {
   render() {
     return (
         <div className="app">
+          <title>FireWild</title>
           <header>
             <Link className="headerLink" to='/'><h1>FireWild</h1></Link>
           </header>
