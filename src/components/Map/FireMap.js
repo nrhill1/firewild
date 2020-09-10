@@ -4,7 +4,6 @@ import { Map, GoogleApiWrapper, Polygon } from 'google-maps-react';
 
 const coord_pair_to_latlng =  ([lng, lat]) => ({ lat, lng })
 const convert_ring_coords = ring => ring.map(coord_pair_to_latlng)
-
 const mapStyles = {
     margin: 30,
     width: '93.75%',
@@ -12,6 +11,8 @@ const mapStyles = {
     border: '1px solid #3E1C18',
     display: 'inline-block'
 };
+
+var currentDate = new Date()
 
 
 class FireMap extends Component {
