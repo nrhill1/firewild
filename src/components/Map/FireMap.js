@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Polygon } from 'google-maps-react';
 
 
-const coord_pair_to_latlng =  ([lng,lat]) => ({ lat, lng })
+const coord_pair_to_latlng =  ([lng, lat]) => ({ lat, lng })
 const convert_ring_coords = ring => ring.map(coord_pair_to_latlng)
 
 const mapStyles = {
@@ -19,6 +19,7 @@ class FireMap extends Component {
     super(props)
     this.state = { fires: [] }
   }
+  
   componentDidMount() {
     fetch('https://opendata.arcgis.com/datasets/f72ebe741e3b4f0db376b4e765728339_0.geojson')
       .then(res => res.json())
@@ -27,7 +28,7 @@ class FireMap extends Component {
 
   displayFires = () => this.state.fires
     .filter(fire => fire.geometry !== null)
-    .map(fire => fire.geometry.coordinates)
+    .map(fire => fire.geometry.coordinates[0])
     .map(rings => <Polygon 
       paths = { rings.reduce((acc, ring) => acc.concat(convert_ring_coords(ring)), []) }
       fillColor     = "#BF5E4B"
@@ -38,7 +39,7 @@ class FireMap extends Component {
     />)
 
 
-  render(){
+  render (){
     return (
       <div className="mapBox">
         <Map
