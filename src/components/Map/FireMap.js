@@ -12,7 +12,6 @@ const mapStyles = {
     display: 'inline-block'
 };
 
-var currentDate = new Date()
 
 
 class FireMap extends Component {
@@ -22,7 +21,7 @@ class FireMap extends Component {
   }
   
   componentDidMount() {
-    fetch('https://opendata.arcgis.com/datasets/f72ebe741e3b4f0db376b4e765728339_0.geojson')
+    fetch('https://opendata.argis.com/datasets/f72ebe741e3b4f0db376b4e765728339_0.geojson')
       .then(res => res.json())
       .then(data => this.setState({ fires: data.features }))
   }
