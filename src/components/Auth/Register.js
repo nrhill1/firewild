@@ -45,7 +45,7 @@ class Register extends Component {
                         name="username" 
                         value={this.state.username} 
                         onChange={this.handleChange} 
-                        className="form-control form-control-lg" 
+                        className="formcontrol" 
                         placeholder="Enter your new username"
                         style= {{ marginTop: "10px" }}
                     />
@@ -55,7 +55,7 @@ class Register extends Component {
                         name="password" 
                         value={this.state.password} 
                         onChange={this.handleChange} 
-                        className="form-control form-control-lg"
+                        className="formcontrol"
                         placeholder="Password"
                         style= {{ marginTop: "10px" }}
                     />
@@ -65,11 +65,11 @@ class Register extends Component {
                         name="password2" 
                         value={this.state.password2} 
                         onChange={this.handleChange} 
-                        className="form-control form-control-lg"
+                        className="formcontrol"
                         placeholder="Confirm"
                         style= {{ marginTop: "10px" }}
                     />
-                    <Button variant="outline-light" type="submit" style= {{ marginTop: "10px" }}>Submit</Button>  
+                    <Button variant="outline-light" className="submitButton" type="submit" style= {{ marginTop: "10px" }}>Submit</Button>  
                 </Form>     
             </div>
         )

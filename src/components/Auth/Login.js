@@ -61,6 +61,7 @@ class Login extends Component {
                         name="username" 
                         placeholder='Username'
                         onChange={this.handleChange} 
+                        className="formcontrol"
                         style = {{
                             display: "inline-block",
                             maxWidth: "250px"
@@ -71,6 +72,7 @@ class Login extends Component {
                         name="password" 
                         placeholder='Password'
                         onChange={this.handleChange}
+                        className="formcontrol"
                         style = {{
                             display: "inline-block",
                             maxWidth: "250px",

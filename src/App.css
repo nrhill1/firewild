@@ -40,6 +40,14 @@ html {
   overflow: scroll;
 }
 
+.formcontrol {
+  border: 2.5px double #FF705E;
+  -webkit-text-stroke-width: 0.75px;
+  -webkit-text-stroke-color: #FF705E;
+  -webkit-text-fill-color: black;
+  transition: left 200ms ease-in-out, right 200ms ease-in-out;
+}
+
 .headerLink {
   text-decoration: none;
   text-align: center;
@@ -208,7 +216,6 @@ nav ul {
 
 .submitButton {
   margin-top: 5px;
-  color: #FF705E;
 }
 
 .loginForm button {
