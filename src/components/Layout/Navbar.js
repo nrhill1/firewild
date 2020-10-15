@@ -13,7 +13,7 @@ class Navigbar extends Component {
 
     render() {
         return(
-            <Navbar bg="dark" className="navbar">
+            <Navbar bg="black" className="navbar">
                 <ul>
                     <li><Nav.Link className="navLink" href="/">Active FireMap </Nav.Link></li>
                     <li><Nav.Link className="navLink" href="/user">Profile</Nav.Link></li>
