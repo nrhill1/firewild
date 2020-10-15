@@ -7,6 +7,7 @@ import ReportForm from '../components/Reports/ReportForm.js'
 import ReportFeed from '../components/Reports/ReportFeed'
 import { Switch, Route } from 'react-router-dom'
 
+
 class CenterContainer extends Component {
     constructor(props){
         super(props)

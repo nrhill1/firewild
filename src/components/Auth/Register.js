@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button'
+import { Form } from 'react-bootstrap'
 
 
 const API_URL = 'http://127.0.0.1:5000/'
@@ -36,9 +37,9 @@ class Register extends Component {
     render() {
         return(
             <div className="registerForm">
-                <form onSubmit={this.handleSubmit}>
+                <Form onSubmit={this.handleSubmit}>
                     <h2>Register</h2>
-                    <input 
+                    <Form.Control 
                         type="username" 
                         id="username" 
                         name="username" 
@@ -46,8 +47,9 @@ class Register extends Component {
                         onChange={this.handleChange} 
                         className="form-control form-control-lg" 
                         placeholder="Enter your new username"
+                        style= {{ marginTop: "10px" }}
                     />
-                    <input
+                    <Form.Control 
                         type="password" 
                         id="password" 
                         name="password" 
@@ -55,8 +57,9 @@ class Register extends Component {
                         onChange={this.handleChange} 
                         className="form-control form-control-lg"
                         placeholder="Password"
+                        style= {{ marginTop: "10px" }}
                     />
-                    <input
+                    <Form.Control 
                         type="password" 
                         id="password2" 
                         name="password2" 
@@ -64,10 +67,10 @@ class Register extends Component {
                         onChange={this.handleChange} 
                         className="form-control form-control-lg"
                         placeholder="Confirm"
+                        style= {{ marginTop: "10px" }}
                     />
-                    <Button variant="outline-light" type="submit">Submit</Button>  
-                </form>
-                         
+                    <Button variant="outline-light" type="submit" style= {{ marginTop: "10px" }}>Submit</Button>  
+                </Form>     
             </div>
         )
     }

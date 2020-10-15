@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from '../components/Layout/Navbar'
+import Navigbar from '../components/Layout/Navbar'
 
 
 class LeftSidebar extends Component {
@@ -16,7 +16,7 @@ class LeftSidebar extends Component {
     render() {
         return(
             <div>
-                <Navbar
+                <Navigbar
                 handleLogout = {this.props.handleLogout}
                 user = {this.state.user}
                 login = {this.state.login} />

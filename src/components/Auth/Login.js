@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button'
+import { Form } from 'react-bootstrap'
 
 const API_URL = 'http://127.0.0.1:5000/'
 
@@ -53,22 +54,31 @@ class Login extends Component {
     render() {
         return(
             <div className="loginForm">
-                <form onSubmit={this.handleLogin}>
-                    <h2>Login</h2>
-                    <input
+                <h2>Login</h2>
+                <Form onSubmit={this.handleLogin}>
+                    <Form.Control
                         type='text'
                         name="username" 
                         placeholder='Username'
                         onChange={this.handleChange} 
+                        style = {{
+                            display: "inline-block",
+                            maxWidth: "250px"
+                        }}
                     />
-                    <input 
+                    <Form.Control
                         type='password'
                         name="password" 
                         placeholder='Password'
-                        onChange={this.handleChange} 
+                        onChange={this.handleChange}
+                        style = {{
+                            display: "inline-block",
+                            maxWidth: "250px",
+                            marginLeft: "10px"
+                        }}
                     />
-                <Button variant="outline-light" type="submit">Submit</Button>
-                </form>
+                <Button variant="outline-light" type="submit" style = {{ display: "block", margin: "0 auto", marginTop: "10px" }}>Submit</Button>
+                </Form>
             </div>
         )
     }
