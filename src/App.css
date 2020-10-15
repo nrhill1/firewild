@@ -7,6 +7,7 @@ html {
   margin-bottom: 20px;
   padding-bottom: 20px;
   background-color: #FF705E;
+  min-height: 4em;
 }
 
 .app h1{  
@@ -44,6 +45,12 @@ header h1 {
   text-align: left;
 }
 
+.loginForm h2 {
+  color: white;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
 .navbar {
   padding-right: 25px;
   font-family: 'Supermercado One';
@@ -70,6 +77,7 @@ header h1 {
 .navLink:hover {
   text-decoration: none;
   border-bottom: double 2px #3E1C18;
+  font-size: 1.15em;
   -webkit-text-stroke-width: 0.75px;
   -webkit-text-stroke-color: #3E1C18;
   -webkit-text-fill-color: #FF705E;
@@ -96,6 +104,11 @@ nav ul {
   margin-left: 60px;
   font-family: 'Supermercado One', cursive;
   color: #3E1C18;
+  background-color: black;
+}
+
+.centerContainer:hover {
+  box-shadow: whitesmoke;
 }
 
 .centerContainer input, textarea {
@@ -105,6 +118,10 @@ nav ul {
 
 .mapBox {
   text-align: center;
+}
+
+.registerForm h2 {
+  color: white
 }
 
 .registerForm button {
