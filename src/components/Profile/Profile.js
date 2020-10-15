@@ -26,7 +26,7 @@ class Profile extends Component {
       }
     render(){
         return(
-            <div>
+            <div className="profile">
                 <h2>Profile</h2>
                 <h5>Username: {this.state.user}</h5>
             </div>
