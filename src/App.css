@@ -55,10 +55,11 @@ header h1 {
 
 .headerLink:hover {
   text-decoration: none;
-  border-bottom: 2.5px solid #FF705E;
+  color: black;
+  border-bottom: 2.5px solid black;
   -webkit-text-stroke-width: 0.75px;
   -webkit-text-stroke-color: #FF705E;
-  -webkit-text-fill-color: #FF705E;
+  -webkit-text-fill-color: black;
   transition: left 200ms ease-in-out, right 200ms ease-in-out;
 }
 
