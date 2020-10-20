@@ -186,13 +186,14 @@ nav ul {
 }
 
 .Report {
-  max-width: 150px;
+  max-width: fit-content;
   max-height: fit-content;
   display: inline-block;
   height: auto;
   text-align: center;
   vertical-align: middle;
   margin-left: 35px;
+  margin-top: 10px;
   align-self: center;
 }
 
