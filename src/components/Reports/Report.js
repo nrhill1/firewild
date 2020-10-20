@@ -43,13 +43,13 @@ class Report extends Component {
     render() {
         return(
             <div className="Report">
-                <Card border="danger">
+                <Card border="danger" bg="dark">
                         <Card.Title className="username"><b>By:</b> {this.props.username}</Card.Title>
                         <Card.Body>
                             <Card.Text>{this.props.text}</Card.Text>
-                            <Card.Text className="location"><b>Location:</b> {this.props.location}</Card.Text>
+                            <Card.Text className="location" style={{marginBottom: "5px"}}><b>Location:</b> {this.props.location}</Card.Text>
                             {(this.state.user === this.props.username) 
-                                ? <Button variant="outline-danger" onClick={this.deleteReport}>Delete</Button> 
+                                ? <Button variant="outline-danger" onClick={this.deleteReport} style={{display: "block", margin: "0 auto"}}>Delete</Button> 
                                 : <span></span> }
                         </Card.Body>
                 </Card>
