@@ -202,11 +202,9 @@ nav ul {
   text-decoration-style: solid;
 }
 
-.Report .text {
-  max-width: 60px;
-}
 
-.Report .text p {
+.CardText {
+  max-width: 60px;
   border: 1.5px dotted #FF705E;
   max-width: 60px;
   width: 100%;

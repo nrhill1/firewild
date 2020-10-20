@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button'
-import { Form } from 'react-bootstrap'
+import { Form, Alert } from 'react-bootstrap'
 
 
 const API_URL = 'http://127.0.0.1:5000/'
@@ -11,7 +11,8 @@ class Register extends Component {
         username: '', 
         password: '',
         password2: '',
-        error: null
+        error: null,
+        showAlert: false
     }
 
     handleChange = (event) => {
@@ -35,6 +36,11 @@ class Register extends Component {
                     console.log(err);
                     this.setState({ error: err });
             });
+        }
+        if (this.state.password !== this.state.password2) {
+            event.preventDefault();
+            console.log("Pass unmatch")
+            this.setState({showAlert: true})
         }
     };
 
@@ -74,7 +80,12 @@ class Register extends Component {
                         style= {{ marginTop: "10px" }}
                     />
                     <Button variant="outline-light" className="submitButton" type="submit" style= {{ marginTop: "10px" }}>Submit</Button>  
-                </Form>     
+                </Form>
+                {this.state.showAlert ?                 
+                <Alert variant="danger" style={{maxWidth: "200px", margin: "0 auto", marginTop: "40px"}}>
+                    Passwords do not match...
+                </Alert> : <span></span>
+                }     
             </div>
         )
     }
