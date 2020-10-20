@@ -31,7 +31,7 @@ class Report extends Component {
 
     deleteReport = (event) => {
         event.preventDefault();
-        Axios.delete(`${API_URL}reports/delete/${this.props.reportid}`)
+        Axios.delete(`${API_URL}reports/delete/${this.props._id}`)
             .then(res => {this.props.history.push('/feed')})
             .catch(err => {
                 console.log(err);
