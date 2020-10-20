@@ -3,7 +3,7 @@ import jwt_decode from 'jwt-decode';
 import Button from 'react-bootstrap/Button'
 import Axios from 'axios';
 
-const API_URL = 'mongodb+srv://nic:nic123@cluster0.ogibu.mongodb.net/firewild?retryWrites=true&w=majority'
+const API_URL = 'http://127.0.0.1:5000/'
 
 class Report extends Component {
     constructor(props) {
