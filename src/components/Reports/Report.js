@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode';
 import Button from 'react-bootstrap/Button'
 import Axios from 'axios';
+import { Card } from 'react-bootstrap'
 
 const API_URL = 'http://127.0.0.1:5000/'
 
@@ -42,13 +43,16 @@ class Report extends Component {
     render() {
         return(
             <div className="Report">
-                    <h5 className="username"><b>By:</b> {this.props.username}</h5>
-                    <p className="text">{this.props.text}</p>
-                    <span className="location"><b>Location:</b> {this.props.location}</span>
-                    {(this.state.user === this.props.username) 
-                        ? <Button variant="outline-danger" onClick={this.deleteReport}>Delete</Button> 
-                        : <span></span> }
-                <hr />
+                <Card border="danger">
+                        <Card.Title className="username"><b>By:</b> {this.props.username}</Card.Title>
+                        <Card.Body>
+                            <Card.Text>{this.props.text}</Card.Text>
+                            <Card.Text className="location"><b>Location:</b> {this.props.location}</Card.Text>
+                            {(this.state.user === this.props.username) 
+                                ? <Button variant="outline-danger" onClick={this.deleteReport}>Delete</Button> 
+                                : <span></span> }
+                        </Card.Body>
+                </Card>
             </div>
         )
     }
