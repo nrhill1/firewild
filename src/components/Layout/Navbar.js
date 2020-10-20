@@ -15,7 +15,7 @@ class Navigbar extends Component {
         return(
             <Navbar bg="black" className="navbar">
                 <ul>
-                    <li><Nav.Link className="navLink" href="/">Active FireMap </Nav.Link></li>
+                    <li><Nav.Link className="navLink" href="/">FireMap</Nav.Link></li>
                     <li><Nav.Link className="navLink" href="/user">Profile</Nav.Link></li>
                     <li><Nav.Link className="navLink" href="/login">Login</Nav.Link></li>
                     <li><Nav.Link className="navLink" href="/register">Register</Nav.Link></li>

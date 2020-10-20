@@ -86,6 +86,11 @@ header h1 {
   text-align: center;
 }
 
+.loginForm button {
+  font-family: 'Supermercado One', cursive;
+  text-align: center;
+}
+
 .navbar {
   padding-right: 25px;
   font-family: 'Supermercado One';
@@ -115,7 +120,7 @@ header h1 {
   font-size: 1.15em;
   -webkit-text-stroke-width: 0.75px;
   -webkit-text-stroke-color: #FF705E;
-  -webkit-text-fill-color: #FF705E;
+  -webkit-text-fill-color: black;
   transition: left 200ms ease-in-out, right 200ms ease-in-out;
 }
 
@@ -218,7 +223,3 @@ nav ul {
   margin-top: 5px;
 }
 
-.loginForm button {
-  font-family: 'Supermercado One', cursive;
-  text-align: center;
-}

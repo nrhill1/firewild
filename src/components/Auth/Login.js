@@ -30,7 +30,6 @@ class Login extends Component {
     	event.preventDefault();
         console.log("Login")
     	const user = this.state;
-  
 		fetch(`${API_URL}users/login`, {
 			method: "POST",
 			headers: {
@@ -47,6 +46,7 @@ class Login extends Component {
                 this.props.history.push('/user')
             })
       .catch(err => {
+        console.log(err)
         this.setState({ error: err })
       })
     };

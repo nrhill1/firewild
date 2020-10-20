@@ -14,7 +14,7 @@ class ReportFeed extends Component {
     }
 
     componentDidMount(){
-        fetch(`${API_URL}reports`)
+        fetch(`${API_URL}/reports`)
             .then(response => response.json())
             .then(data => {
                 console.log(data.result)

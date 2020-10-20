@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Button from 'react-bootstrap/Button'
 import { Form } from 'react-bootstrap'
 
@@ -22,16 +21,21 @@ class Register extends Component {
     };
     
     handleSubmit = (event) => {
-        event.preventDefault();
-        console.log('Register Submit - ', this.state);
-        const newUser = this.state;
-        console.log(newUser);
-        axios.post(`${API_URL}auth/register`, newUser)
-            .then(res => this.props.history.push('/login'))
-            .catch(err => {
-                console.log(err);
-                this.setState({ error: err });
-        });
+        if (this.state.password && this.state.password2 && this.state.password === this.state.password2) {
+            event.preventDefault();
+            console.log('Register Submit - ', this.state);
+            let requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(this.state)
+            };
+            fetch(`${API_URL}auth/register`, requestOptions)
+                .then(res => this.props.history.push('/login'))
+                .catch(err => {
+                    console.log(err);
+                    this.setState({ error: err });
+            });
+        }
     };
 
     render() {
