@@ -27,7 +27,7 @@ class ReportFeed extends Component {
     render() {
         let reportList = this.state.reports.map((report) =>{
             return(
-                <Report 
+                <Report
                     username = {report.username}
                     text = {report.text}
                     location = {report.location}

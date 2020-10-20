@@ -32,7 +32,7 @@ class Report extends Component {
 
     deleteReport = (event) => {
         event.preventDefault();
-        Axios.delete(`${API_URL}reports/delete/${this.props._id}`)
+        Axios.delete(`${API_URL}reports/delete/${this.props.reportid}`)
             .then(res => {this.props.history.push('/feed')})
             .catch(err => {
                 console.log(err);
@@ -42,7 +42,7 @@ class Report extends Component {
 
     render() {
         return(
-            <div className="Report">
+            <div className="Report" key={this.props.reportid}>
                 <Card border="danger" bg="dark">
                         <Card.Title className="username"><b>By:</b> {this.props.username}</Card.Title>
                         <Card.Body>
