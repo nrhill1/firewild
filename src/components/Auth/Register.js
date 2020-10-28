@@ -9,6 +9,7 @@ class Register extends Component {
 
     state = {
         username: '', 
+        email: '',
         password: '',
         password2: '',
         error: null,
@@ -22,7 +23,7 @@ class Register extends Component {
     };
     
     handleSubmit = (event) => {
-        if (this.state.password && this.state.password2 && this.state.password === this.state.password2) {
+        if (this.state.username && this.state.password && this.state.password2 && this.state.password === this.state.password2) {
             event.preventDefault();
             console.log('Register Submit - ', this.state);
             let requestOptions = {
@@ -31,16 +32,19 @@ class Register extends Component {
                 body: JSON.stringify(this.state)
             };
             fetch(`${API_URL}auth/register`, requestOptions)
-                .then(res => this.props.history.push('/login'))
-                .catch(err => {
-                    console.log(err);
-                    this.setState({ error: err });
-            });
+            .then(res => {
+                if (res.error) {
+                    return this.setState({ error: res.error, showAlert:true })
+                }
+                else{ 
+                    return this.props.history.push('/login')
+                }
+            })
         }
         if (this.state.password !== this.state.password2) {
             event.preventDefault();
             console.log("Pass unmatch")
-            this.setState({showAlert: true})
+            this.setState({error: "Passwords do not match...",showAlert: true})
         }
     };
 
@@ -57,6 +61,16 @@ class Register extends Component {
                         onChange={this.handleChange} 
                         className="formcontrol" 
                         placeholder="Enter your new username"
+                        style= {{ marginTop: "10px" }}
+                    />
+                    <Form.Control 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        value={this.state.email} 
+                        onChange={this.handleChange} 
+                        className="formcontrol"
+                        placeholder="Email address"
                         style= {{ marginTop: "10px" }}
                     />
                     <Form.Control 
@@ -81,9 +95,9 @@ class Register extends Component {
                     />
                     <Button variant="outline-light" className="submitButton" type="submit" style= {{ marginTop: "10px" }}>Submit</Button>  
                 </Form>
-                {this.state.showAlert ?                 
+                {this.state.showAlert ?                
                 <Alert variant="danger" style={{maxWidth: "200px", margin: "0 auto", marginTop: "40px"}}>
-                    Passwords do not match...
+                    {this.state.error}
                 </Alert> : <span></span>
                 }     
             </div>
