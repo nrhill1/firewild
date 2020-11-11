@@ -19,22 +19,6 @@ class App extends Component {
     this.handleLogout = this.handleLogout.bind(this)
   }
 
-  /*
-  componentDidMount() {
-    if (localStorage.token) {
-      const token = localStorage.token
-      const decoded = jwt_decode(token)
-      this.setState({
-        login: true,
-        user: decoded.identity.username
-      })
-      console.log(decoded)
-      console.log(decoded.identity)
-      console.log(decoded.identity.username)
-    }
-  }
-  */
-
   handleLogout() {
     this.setState({
       login: false,
@@ -67,3 +51,20 @@ class App extends Component {
 }
 
 export default App;
+
+
+/*
+componentDidMount() {
+  if (localStorage.token) {
+    const token = localStorage.token
+    const decoded = jwt_decode(token)
+    this.setState({
+      login: true,
+      user: decoded.identity.username
+    })
+    console.log(decoded)
+    console.log(decoded.identity)
+    console.log(decoded.identity.username)
+  }
+}
+*/
