@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import CenterContainer from './containers/CenterContainer.js';
 import LeftSidebar from './containers/LeftSidebar.js';
 import { Link } from 'react-router-dom';
-import jwt_decode from 'jwt-decode';
+// import jwt_decode from 'jwt-decode';
 
 
 class App extends Component {
@@ -19,6 +19,7 @@ class App extends Component {
     this.handleLogout = this.handleLogout.bind(this)
   }
 
+  /*
   componentDidMount() {
     if (localStorage.token) {
       const token = localStorage.token
@@ -32,6 +33,7 @@ class App extends Component {
       console.log(decoded.identity.username)
     }
   }
+  */
 
   handleLogout() {
     this.setState({
