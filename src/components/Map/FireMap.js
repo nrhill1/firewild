@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Polygon } from 'google-maps-react';
 
-
+/*
 const coord_pair_to_latlng =  ([lng, lat]) => ({ lat, lng })
 const convert_ring_coords = ring => ring.map(coord_pair_to_latlng)
+*/
 
 const mapStyles = {
     margin: 30,
@@ -27,18 +28,23 @@ class FireMap extends Component {
       .then(data => this.setState({ fires: data.features }))
   }
 
-  displayFires = () => this.state.fires
-    .filter(fire => fire.geometry !== null)
-    .map(fire => fire.geometry.coordinates[0])
-    .map(rings => <Polygon 
-      paths = { rings.reduce((acc, ring) => acc.concat(convert_ring_coords(ring)), []) }
-      fillColor     = "#BF5E4B"
-      fillOpacity   = {0.45}
-      strokeColor   = "#6B352A"
-      strokeOpacity = {0.9}
-      strokeWeight  = {1}
-    />)
-
+  displayFires() {
+    return this.state.fires.map (fire => {
+      let coordinates = fire.geometry.coordinates[0][0]
+      let coordArr = []
+      coordinates.map(coordinate => coordArr.push({lat:coordinate[1], lng:coordinate[0]} ))
+      return ( 
+        <Polygon 
+          paths = {coordArr}
+          fillColor     = "#BF5E4B"
+          fillOpacity   = {0.45}
+          strokeColor   = "#6B352A"
+          strokeOpacity = {0.9}
+          strokeWeight  = {1}
+        />
+      )
+    })
+  }
 
   render (){
     return (
