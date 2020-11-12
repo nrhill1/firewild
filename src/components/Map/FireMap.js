@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Polygon } from 'google-maps-react';
 
-/*
-const coord_pair_to_latlng =  ([lng, lat]) => ({ lat, lng })
-const convert_ring_coords = ring => ring.map(coord_pair_to_latlng)
-*/
 
 const mapStyles = {
     margin: 30,
