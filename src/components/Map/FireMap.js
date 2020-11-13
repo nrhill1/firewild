@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper, Polygon } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Polygon, InfoWindow } from 'google-maps-react';
 
 
 const mapStyles = {
@@ -18,7 +18,8 @@ class FireMap extends Component {
     super(props)
     this.state = { 
       fires: [],
-      activePoly: null
+      activePoly: null,
+      showingInfoWindow: false
     }
   }
   
@@ -31,7 +32,8 @@ class FireMap extends Component {
   handleMapClick = (props) => {
     if(this.state.activePoly) {
       this.setState({
-        activePoly: null
+        activePoly: null,
+        showingInfoWindow: false
       })
     }
   }
@@ -60,7 +62,7 @@ class FireMap extends Component {
         strokeWeight: 1,
       });
     }
-    
+
   
     this.setState({
       activePoly: polygon
@@ -74,12 +76,13 @@ class FireMap extends Component {
 
 
   displayFires() {
-    return this.state.fires.map (fire => {
+    return this.state.fires.map ((fire, idx) => {
       let coordinates = fire.geometry.coordinates[0][0]
       let coordArr = []
       coordinates.map(coordinate => coordArr.push({lat:coordinate[1], lng:coordinate[0]} ))
-      return ( 
+      return (
         <Polygon 
+          key = {idx}
           paths = {coordArr}
           fillColor     = "#BF5E4B"
           fillOpacity   = {0.45}
@@ -110,3 +113,16 @@ class FireMap extends Component {
 
 
 export default GoogleApiWrapper({apiKey: 'AIzaSyBfd6BLe54h_8oTSb9mOz4yQnTLqGyReXs'})(FireMap)
+
+/*
+
+    <InfoWindow
+      marker={this.state.activePoly}
+      visible={this.state.showingInfoWindow}>
+        <div>
+          <h1>{this.state.activePoly ? this.state.activePoly.properties.IncidentName : ""}</h1>
+        </div>
+      >
+      </InfoWindow>
+
+*/
