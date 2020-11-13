@@ -36,6 +36,7 @@ html {
   -webkit-box-shadow: 1px 4px 5px 4px rgba(202,7,7,0.61);
   -moz-box-shadow: 1px 4px 5px 4px rgba(202,7,7,0.61);
   transition: left 750ms ease-in-out, right 200ms ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .centerContainer input, textarea {
@@ -73,6 +74,7 @@ header h1 {
   -webkit-text-fill-color: black;
   text-shadow: 5px 9px 13px rgba(195,24,24,0.73);
   transition: left 200ms ease-in-out, right 200ms ease-in-out;
+  transition: text-shadow 0.3s ease-in-out;
 }
 
 .leftSidebar {
@@ -108,6 +110,7 @@ header h1 {
   box-shadow: 10px 10px 5px 0px rgba(202,7,7,0.75);
   -webkit-box-shadow: 10px 10px 5px 0px rgba(202,7,7,0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(202,7,7,0.75);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .navbar li {
@@ -133,6 +136,7 @@ header h1 {
   -webkit-text-fill-color: black;
   transition: left 500ms ease-in-out, right 200ms ease-in-out;
   text-shadow: 5px 9px 13px rgba(195,24,24,0.73);
+  transition: text-shadow 0.3s ease-in-out;
 }
 
 .navLinkk:visited {
@@ -148,6 +152,7 @@ header h1 {
   -webkit-text-fill-color: black;
   transition: left 500ms ease-in-out, right 200ms ease-in-out;
   text-shadow: 5px 9px 13px rgba(195,24,24,0.73);
+  transition: text-shadow 0.3s ease-in-out;
 }
 
 nav ul {
