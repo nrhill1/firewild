@@ -99,7 +99,8 @@ class FireMap extends Component {
           name = {fire.properties.IncidentName 
             + " Fire ----- Last Updated: " 
             + fire.properties.DateCurrent.slice(5,10) + "/" 
-            + fire.properties.DateCurrent.slice(0,4)}
+            + fire.properties.DateCurrent.slice(0,4)
+          }
           paths = {coordArr}
           fillColor     = "#BF5E4B"
           fillOpacity   = {0.45}
