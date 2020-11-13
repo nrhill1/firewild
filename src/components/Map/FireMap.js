@@ -75,7 +75,6 @@ class FireMap extends Component {
       });
     }
 
-  
     this.setState({
       activePoly: polygon,
       showingInfoWindow: true
