@@ -10,6 +10,18 @@ const mapStyles = {
     display: 'inline-block'
 };
 
+const infoWindowStyle = {
+  top: '-110px',
+  left: '-100px',
+  width: 300,
+  backgroundColor: 'white',
+  boxShadow: '0 2px 7px 1px rgba(0, 0, 0, 0.3)',
+  padding: 10,
+  fontSize: 14,
+  zIndex: 100,
+};
+
+
 
 
 class FireMap extends Component {
@@ -84,7 +96,7 @@ class FireMap extends Component {
       return (
         <Polygon 
           key = {idx}
-          name = {fire.properties.IncidentName}
+          name = {fire.properties.IncidentName + " Fire ----- Last Updated: " + fire.properties.DateCurrent.slice(5,10) +"/" + fire.properties.DateCurrent.slice(0,4)}
           paths = {coordArr}
           fillColor     = "#BF5E4B"
           fillOpacity   = {0.45}
@@ -109,11 +121,12 @@ class FireMap extends Component {
           {this.displayFires()}
           <InfoWindow
             position={this.state.activePoly}
-            visible={this.state.showingInfoWindow}>
-              <div>
-                <h1>{this.state.activePoly ? this.state.activePoly.name : ""}</h1>
-              </div>
+            visible={this.state.showingInfoWindow}
+            style={infoWindowStyle}
           >
+            <div>
+              <h1>{this.state.activePoly ? this.state.activePoly.name : ""}</h1>
+            </div>
           </InfoWindow>
         </Map>
       </div>
@@ -126,6 +139,6 @@ export default GoogleApiWrapper({apiKey: 'AIzaSyBfd6BLe54h_8oTSb9mOz4yQnTLqGyReX
 
 /*
 
-    
+
 
 */
