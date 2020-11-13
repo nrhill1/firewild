@@ -71,11 +71,6 @@ header h1 {
   transition: left 200ms ease-in-out, right 200ms ease-in-out;
 }
 
-.infoWindow {
-  max-width: 400px;
-  font-size: 6rem;
-}
-
 .leftSidebar {
   display: inline-block;
   margin-left: 10px;
