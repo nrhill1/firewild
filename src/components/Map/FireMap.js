@@ -65,7 +65,8 @@ class FireMap extends Component {
 
   
     this.setState({
-      activePoly: polygon
+      activePoly: polygon,
+      showingInfoWindow: true
     })
   
     return {
@@ -83,6 +84,7 @@ class FireMap extends Component {
       return (
         <Polygon 
           key = {idx}
+          name = {fire.properties.IncidentName}
           paths = {coordArr}
           fillColor     = "#BF5E4B"
           fillOpacity   = {0.45}
@@ -105,6 +107,14 @@ class FireMap extends Component {
           initialCenter = {{ lat: 37.7749, lng: -122.4149 }}
         >
           {this.displayFires()}
+          <InfoWindow
+            position={this.state.activePoly}
+            visible={this.state.showingInfoWindow}>
+              <div>
+                <h1>{this.state.activePoly ? this.state.activePoly.name : ""}</h1>
+              </div>
+          >
+          </InfoWindow>
         </Map>
       </div>
     )
@@ -116,13 +126,6 @@ export default GoogleApiWrapper({apiKey: 'AIzaSyBfd6BLe54h_8oTSb9mOz4yQnTLqGyReX
 
 /*
 
-    <InfoWindow
-      marker={this.state.activePoly}
-      visible={this.state.showingInfoWindow}>
-        <div>
-          <h1>{this.state.activePoly ? this.state.activePoly.properties.IncidentName : ""}</h1>
-        </div>
-      >
-      </InfoWindow>
+    
 
 */
