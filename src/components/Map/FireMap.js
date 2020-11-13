@@ -123,9 +123,9 @@ class FireMap extends Component {
         >
           {this.displayFires()}
           <InfoWindow
-            position={this.state.activePoly}
-            visible={this.state.showingInfoWindow}
-            style={infoWindowStyle}
+            position    = {this.state.activePoly}
+            visible     = {this.state.showingInfoWindow}
+            style       = {infoWindowStyle}
           >
             <div>
               <h1>{this.state.activePoly ? this.state.activePoly.name : ""}</h1>
