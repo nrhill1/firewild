@@ -63,6 +63,7 @@ class FireMap extends Component {
       coordinates
     };
   }
+  
 
   displayFires() {
     return this.state.fires.map ((fire, idx) => {
