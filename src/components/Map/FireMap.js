@@ -11,11 +11,15 @@ const mapStyles = {
 };
 
 
+
 class FireMap extends Component {
   
   constructor(props) {
     super(props)
-    this.state = { fires: [] }
+    this.state = { 
+      fires: [],
+      activePoly: null
+    }
   }
   
   componentDidMount() {
@@ -23,6 +27,50 @@ class FireMap extends Component {
       .then(res => res.json())
       .then(data => this.setState({ fires: data.features }))
   }
+
+  handleMapClick = (props) => {
+    if(this.state.activePoly) {
+      this.setState({
+        activePoly: null
+      })
+    }
+  }
+
+  handleClick = (props, polygon) => {
+    const paths = polygon.getPaths().getArray();
+    const coordinates = paths.map(path => {
+      const points = path.getArray();
+      return points.map(point => [point.lng(), point.lat()]);
+    });
+  
+    polygon.setOptions({
+      fillColor: "#6B352A",
+      strokeColor: "#BF5E4B",
+      strokeOpacity: 1.0,
+      fillOpacity: 0.9,
+      strokeWeight: 1.8
+    });
+
+    if (this.state.activePoly !== null) {
+      this.state.activePoly.setOptions({
+        fillColor: "#BF5E4B",
+        fillOpacity: 0.45,
+        strokeColor: "#6B352A",
+        strokeOpacity: 0.9,
+        strokeWeight: 1,
+      });
+    }
+  
+    this.setState({
+      activePoly: polygon
+    })
+  
+    return {
+      type: 'Polygon',
+      coordinates
+    };
+  }
+
 
   displayFires() {
     return this.state.fires.map (fire => {
@@ -37,6 +85,7 @@ class FireMap extends Component {
           strokeColor   = "#6B352A"
           strokeOpacity = {0.9}
           strokeWeight  = {1}
+          onClick = {this.handleClick}
         />
       )
     })
