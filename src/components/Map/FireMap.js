@@ -95,11 +95,7 @@ class FireMap extends Component {
       return (
         <Polygon 
           key = {idx}
-          name = {fire.properties.IncidentName 
-            + " Fire ----- Last Updated: " 
-            + fire.properties.DateCurrent.slice(5,10) + "/" 
-            + fire.properties.DateCurrent.slice(0,4)
-          }
+          name = {fire.properties.IncidentName}
           paths = {coordArr}
           fillColor     = "#BF5E4B"
           fillOpacity   = {0.45}
@@ -107,7 +103,25 @@ class FireMap extends Component {
           strokeOpacity = {0.9}
           strokeWeight  = {1}
           onClick = {this.handleClick}
-        />
+        >
+          <InfoWindow
+            position    = "relative"
+            key         = {fire.properties.IncidentName}
+            visible     = {this.state.showingInfoWindow && this.state.activePoly.name === fire.properties.IncidentName}
+            style       = {infoWindowStyle}
+            >
+            <div>
+              <h1>
+                {
+                  fire.properties.IncidentName 
+                  + " Fire ----- Last Updated: " 
+                  + fire.properties.DateCurrent.slice(5,10) + "/" 
+                  + fire.properties.DateCurrent.slice(0,4)
+                }
+              </h1>
+            </div>
+          </InfoWindow>
+        </Polygon>
       )
     })
   }
@@ -122,15 +136,7 @@ class FireMap extends Component {
           initialCenter = {{ lat: 37.7749, lng: -122.4149 }}
         >
           {this.displayFires()}
-          <InfoWindow
-            position    = {this.state.activePoly}
-            visible     = {this.state.showingInfoWindow}
-            style       = {infoWindowStyle}
-          >
-            <div>
-              <h1>{this.state.activePoly ? this.state.activePoly.name : ""}</h1>
-            </div>
-          </InfoWindow>
+          
         </Map>
       </div>
     )
