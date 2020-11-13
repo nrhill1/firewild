@@ -60,6 +60,7 @@ class FireMap extends Component {
         strokeWeight: 1,
       });
     }
+    
   
     this.setState({
       activePoly: polygon
