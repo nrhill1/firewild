@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
+import { Badge } from '@material-ui/core'
 
 class Navigbar extends Component {
 
@@ -15,12 +16,12 @@ class Navigbar extends Component {
         return(
             <Navbar bg="black" className="navbar">
                 <ul>
-                    <li><Nav.Link className="navLink" href="/">FireMap</Nav.Link></li>
+                    <li><Badge color="error" overlap="circle" badgeContent="0"><Nav.Link className="navLink" href="/">FireMap</Nav.Link></Badge></li>
                     { localStorage.token ? <li><Nav.Link className="navLink" href="/user">Profile</Nav.Link></li> : ""}
                     <li><Nav.Link className="navLink" href="/login">Login</Nav.Link></li>
                     <li><Nav.Link className="navLink" href="/register">Register</Nav.Link></li>
                     { localStorage.token ? <li><Nav.Link className="navLink" href="/report">Create Report</Nav.Link></li>: ""}
-                    <li><Nav.Link className="navLinkk" href="/feed">Report Feed</Nav.Link></li>
+                    <li><Badge color="error" overlap="circle" badgeContent="0"><Nav.Link className="navLinkk" href="/feed">Report Feed</Nav.Link></Badge></li>
                     { localStorage.token ? <li><Nav.Link className="navLink" onClick={this.props.handleLogout}>Logout</Nav.Link></li>: ""}
                 </ul>
             </Navbar>
