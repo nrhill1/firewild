@@ -21,7 +21,7 @@ class Navigbar extends Component {
                     <li><Nav.Link className="navLink" href="/login">Login</Nav.Link></li>
                     <li><Nav.Link className="navLink" href="/register">Register</Nav.Link></li>
                     { localStorage.token ? <li><Nav.Link className="navLink" href="/report">Create Report</Nav.Link></li>: ""}
-                    <li><Badge color="error" overlap="circle" badgeContent="0"><Nav.Link className="navLinkk" href="/feed">Report Feed</Nav.Link></Badge></li>
+                    <li><Badge color="error" badgeContent="0"><Nav.Link className="navLinkk" href="/feed">Report Feed</Nav.Link></Badge></li>
                     { localStorage.token ? <li><Nav.Link className="navLink" onClick={this.props.handleLogout}>Logout</Nav.Link></li>: ""}
                 </ul>
             </Navbar>
