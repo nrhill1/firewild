@@ -65,6 +65,14 @@ header h1 {
   border-bottom: 2.5px solid #FF705E;
 }
 
+header h1:hover {
+  font-size: 6.3rem;
+  border-bottom: 2.5px solid #FF705E;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
+}
+
 .headerLink:hover {
   text-decoration: none;
   color: black;
@@ -73,7 +81,9 @@ header h1 {
   -webkit-text-stroke-color: #FF705E;
   -webkit-text-fill-color: black;
   text-shadow: 5px 9px 13px rgba(195,24,24,0.73);
-  transition: left 200ms ease-in-out, right 200ms ease-in-out;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
   transition: text-shadow 0.3s ease-in-out;
 }
 
@@ -113,6 +123,10 @@ header h1 {
   transition: box-shadow 0.3s ease-in-out;
 }
 
+.navbar:hover:after {
+  opacity: 1;
+}
+
 .navbar li {
   margin-bottom: 2.5px;
 }
@@ -130,11 +144,13 @@ header h1 {
 .navLink:hover {
   text-decoration: none;
   border-bottom: double 2px #FF705E;
-  font-size: 1.15em;
+  transform: scale(1.15);
   -webkit-text-stroke-width: 0.75px;
   -webkit-text-stroke-color: #FF705E;
   -webkit-text-fill-color: black;
-  transition: left 500ms ease-in-out, right 200ms ease-in-out;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
   text-shadow: 5px 9px 13px rgba(195,24,24,0.73);
   transition: text-shadow 0.3s ease-in-out;
 }
