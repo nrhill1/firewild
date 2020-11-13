@@ -11,6 +11,7 @@ class Navigbar extends Component {
           user: this.props.user
         }
     }
+    
 
     render() {
         return(
