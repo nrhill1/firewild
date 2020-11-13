@@ -60,19 +60,6 @@ html {
   margin-top: 0;
 }
 
-header h1 {
-  font-size: 6rem;
-  border-bottom: 2.5px solid #FF705E;
-}
-
-header h1:hover {
-  font-size: 6.3rem;
-  border-bottom: 2.5px solid #FF705E;
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  transition: all .5s;
-}
-
 .headerLink:hover {
   text-decoration: none;
   color: black;
@@ -86,6 +73,19 @@ header h1:hover {
   transition: all .5s;
   transition: text-shadow 0.3s ease-in-out;
 }
+
+header h1 {
+  font-size: 6rem;
+  border-bottom: 2.5px solid #FF705E;
+}
+
+header h1:hover {
+  border-bottom: 2.5px solid #FF705E;
+  -webkit-transition: all 1.5s ease-in-out padding 0.8s linear;
+  -moz-transition: all 1.5s ease-in-out padding 0.8s linear;;
+  transition: all 1.5s ease-in-out padding 0.8s linear;;
+}
+
 
 .leftSidebar {
   display: inline-block;
