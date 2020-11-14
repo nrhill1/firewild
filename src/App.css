@@ -68,10 +68,10 @@ html {
   -webkit-text-stroke-color: #FF705E;
   -webkit-text-fill-color: black;
   text-shadow: 5px 9px 13px rgba(195,24,24,0.73);
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  transition: all .5s;
-  transition: text-shadow 0.3s ease-in-out;
+  -webkit-transition: all .75s ease-in-out;
+  -moz-transition: all .75s ease-in-out;
+  transition: all .75s ease-in-out;
+  transition: text-shadow 0.5s ease-in-out;
 }
 
 header h1 {
@@ -151,8 +151,8 @@ header h1:hover {
   -webkit-transition: all .5s;
   -moz-transition: all .5s;
   transition: all .5s;
-  text-shadow: 5px 9px 13px rgba(195,24,24,0.73);
-  transition: text-shadow 0.3s ease-in-out;
+  text-shadow: 5px 9px 13px rgba(195,24,24,0.83);
+  transition: text-shadow 0.5s ease-in-out;
 }
 
 .navLinkk:visited {
@@ -167,8 +167,8 @@ header h1:hover {
   -webkit-text-stroke-color: #FF705E;
   -webkit-text-fill-color: black;
   transition: left 500ms ease-in-out, right 200ms ease-in-out;
-  text-shadow: 5px 9px 13px rgba(195,24,24,0.73);
-  transition: text-shadow 0.3s ease-in-out;
+  text-shadow: 5px 9px 13px rgba(195,24,24,0.83);
+  transition: text-shadow 0.5s ease-in-out;
 }
 
 nav ul {
