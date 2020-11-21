@@ -1,5 +1,8 @@
 # FIREWILD
 
+Firewild is a React.js app that uses the Google Maps API to track wildfires across the US using GeoJSON data from CA.gov
+
+
 ## Available Scripts
 
 In the project directory, you can run:
