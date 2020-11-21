@@ -16,3 +16,4 @@ The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 
+Copy this link and paste it in your address bar to see the main page in deployment (all links are broken): firewild.netlify.app
