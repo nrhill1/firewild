@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Map, GoogleApiWrapper, Polygon, InfoWindow } from "google-maps-react";
 
 const mapStyles = {
   margin: 30,
