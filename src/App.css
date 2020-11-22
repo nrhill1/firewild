@@ -2,7 +2,6 @@ html {
   background-color: black;
 }
 
-
 .app {
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -10,7 +9,7 @@ html {
   min-height: 4em;
 }
 
-.app h1{  
+.app h1 {
   margin-bottom: 30px;
 }
 
@@ -18,7 +17,7 @@ html {
   display: inline-block;
   position: absolute;
   text-align: center;
-  border: 5px double #FF705E;
+  border: 5px double #ff705e;
   height: 600px;
   width: 1000px;
   align-content: center;
@@ -26,28 +25,29 @@ html {
   margin-top: 0px;
   margin-bottom: 30px;
   margin-left: 60px;
-  font-family: 'Supermercado One', cursive;
-  color: #FF705E;
+  font-family: "Supermercado One", cursive;
+  color: #ff705e;
   background-color: black;
 }
 
 .centerContainer:hover {
-  box-shadow: 1px 4px 5px 4px rgba(202,7,7,0.61);
-  -webkit-box-shadow: 1px 4px 5px 4px rgba(202,7,7,0.61);
-  -moz-box-shadow: 1px 4px 5px 4px rgba(202,7,7,0.61);
+  box-shadow: 1px 4px 5px 4px rgba(202, 7, 7, 0.61);
+  -webkit-box-shadow: 1px 4px 5px 4px rgba(202, 7, 7, 0.61);
+  -moz-box-shadow: 1px 4px 5px 4px rgba(202, 7, 7, 0.61);
   transition: left 750ms ease-in-out, right 200ms ease-in-out;
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.centerContainer input, textarea {
-  font-family: 'Supermercado One', cursive;
+.centerContainer input,
+textarea {
+  font-family: "Supermercado One", cursive;
   overflow: scroll;
 }
 
 .formcontrol {
-  border: 2.5px double #FF705E;
+  border: 2.5px double #ff705e;
   -webkit-text-stroke-width: 0.75px;
-  -webkit-text-stroke-color: #FF705E;
+  -webkit-text-stroke-color: #ff705e;
   -webkit-text-fill-color: black;
   transition: left 200ms ease-in-out, right 200ms ease-in-out;
 }
@@ -55,8 +55,8 @@ html {
 .headerLink {
   text-decoration: none;
   text-align: center;
-  color:#FF705E;
-  font-family: 'Supermercado One', cursive;
+  color: #ff705e;
+  font-family: "Supermercado One", cursive;
   margin-top: 0;
 }
 
@@ -65,27 +65,26 @@ html {
   color: black;
   border-bottom: 2.5px solid black;
   -webkit-text-stroke-width: 0.75px;
-  -webkit-text-stroke-color: #FF705E;
+  -webkit-text-stroke-color: #ff705e;
   -webkit-text-fill-color: black;
-  text-shadow: 5px 9px 13px rgba(195,24,24,0.73);
-  -webkit-transition: all .75s ease-in-out;
-  -moz-transition: all .75s ease-in-out;
-  transition: all .75s ease-in-out;
+  text-shadow: 5px 9px 13px rgba(195, 24, 24, 0.73);
+  -webkit-transition: all 0.75s ease-in-out;
+  -moz-transition: all 0.75s ease-in-out;
+  transition: all 0.75s ease-in-out;
   transition: text-shadow 0.5s ease-in-out;
 }
 
 header h1 {
   font-size: 6rem;
-  border-bottom: 2.5px solid #FF705E;
+  border-bottom: 2.5px solid #ff705e;
 }
 
 header h1:hover {
-  border-bottom: 2.5px solid #FF705E;
+  border-bottom: 2.5px solid #ff705e;
   -webkit-transition: all 1.5s ease-in-out padding 0.8s linear;
-  -moz-transition: all 1.5s ease-in-out padding 0.8s linear;;
-  transition: all 1.5s ease-in-out padding 0.8s linear;;
+  -moz-transition: all 1.5s ease-in-out padding 0.8s linear;
+  transition: all 1.5s ease-in-out padding 0.8s linear;
 }
-
 
 .leftSidebar {
   display: inline-block;
@@ -96,30 +95,30 @@ header h1:hover {
 }
 
 .loginForm h2 {
-  color: #FF705E;
+  color: #ff705e;
   margin-bottom: 10px;
   text-align: center;
 }
 
 .loginForm button {
-  font-family: 'Supermercado One', cursive;
+  font-family: "Supermercado One", cursive;
   text-align: center;
 }
 
 .navbar {
   padding-right: 25px;
-  font-family: 'Supermercado One';
-  border: 2.5px double #FF705E;
-  color: #FF705E;
+  font-family: "Supermercado One";
+  border: 2.5px double #ff705e;
+  color: #ff705e;
   display: inline-block;
   padding-bottom: 3px;
   transition: left 600ms ease-in-out, right 200ms ease-in-out;
 }
 
 .navbar:hover {
-  box-shadow: 10px 10px 5px 0px rgba(202,7,7,0.75);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(202,7,7,0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(202,7,7,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(202, 7, 7, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(202, 7, 7, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(202, 7, 7, 0.75);
   transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -138,36 +137,36 @@ header h1:hover {
 
 .navLink:visited {
   text-decoration: none;
-  color: #FF705E;
+  color: #ff705e;
 }
 
 .navLink:hover {
   text-decoration: none;
-  border-bottom: double 2px #FF705E;
+  border-bottom: double 2px #ff705e;
   transform: scale(1.15);
   -webkit-text-stroke-width: 0.75px;
-  -webkit-text-stroke-color: #FF705E;
+  -webkit-text-stroke-color: #ff705e;
   -webkit-text-fill-color: black;
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  transition: all .5s;
-  text-shadow: 5px 9px 13px rgba(195,24,24,0.83);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  text-shadow: 5px 9px 13px rgba(195, 24, 24, 0.83);
   transition: text-shadow 0.5s ease-in-out;
 }
 
 .navLinkk:visited {
   text-decoration: none;
-  color: #FF705E;
+  color: #ff705e;
 }
 
 .navLinkk:hover {
   text-decoration: none;
-  border-bottom: double 2px #FF705E;
+  border-bottom: double 2px #ff705e;
   -webkit-text-stroke-width: 0.75px;
-  -webkit-text-stroke-color: #FF705E;
+  -webkit-text-stroke-color: #ff705e;
   -webkit-text-fill-color: black;
   transition: left 500ms ease-in-out, right 200ms ease-in-out;
-  text-shadow: 5px 9px 13px rgba(195,24,24,0.83);
+  text-shadow: 5px 9px 13px rgba(195, 24, 24, 0.83);
   transition: text-shadow 0.5s ease-in-out;
 }
 
@@ -177,31 +176,30 @@ nav ul {
   padding-bottom: 3px;
 }
 
-
 .mapBox {
   text-align: center;
 }
 
 .profile h2 {
-  color: #FF705E;
-  border-bottom: double 2px #FF705E;
+  color: #ff705e;
+  border-bottom: double 2px #ff705e;
 }
 
 .profile h5 {
-  color: #FF705E;
+  color: #ff705e;
 }
 
 .registerForm h2 {
-  color: #FF705E
+  color: #ff705e;
 }
 
 .registerForm button {
-  font-family: 'Supermercado One', cursive;
+  font-family: "Supermercado One", cursive;
   text-align: center;
 }
 
 .registerForm input {
-  font-family: 'Supermercado One', cursive;
+  font-family: "Supermercado One", cursive;
   display: block;
   margin: auto;
   width: 30%;
@@ -214,7 +212,7 @@ nav ul {
 }
 
 .reportFeed {
-  color:#FF705E;
+  color: #ff705e;
   align-content: center;
   position: relative;
   justify-content: center;
@@ -226,7 +224,7 @@ nav ul {
 
 .reportFeed h3 {
   width: auto;
-  font-family: 'Supermercado One', cursive;
+  font-family: "Supermercado One", cursive;
   padding-right: 20px;
   padding-left: 20px;
   border-bottom-style: dotted;
@@ -245,14 +243,13 @@ nav ul {
 }
 
 .Report .username {
-  text-decoration: underline #FF705E;
+  text-decoration: underline #ff705e;
   text-decoration-style: solid;
 }
 
-
 .CardText {
   max-width: 60px;
-  border: 1.5px dotted #FF705E;
+  border: 1.5px dotted #ff705e;
   max-width: 60px;
   width: 100%;
   line-height: 50px;
@@ -264,10 +261,13 @@ nav ul {
 }
 
 .Report hr {
-  color: #FF705E;
+  color: #ff705e;
 }
 
 .submitButton {
   margin-top: 5px;
 }
 
+.webmap {
+  height: 400px;
+}

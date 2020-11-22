@@ -1,71 +1,39 @@
 import React, { Component } from "react";
-
-const mapStyles = {
-  margin: 30,
-  width: "93.75%",
-  height: "90%",
-  border: "1px solid #3E1C18",
-  display: "inline-block"
-};
+import { loadModules } from "esri-loader";
 
 class FireMap extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      fires: [],
-      activePoly: null,
-      showingInfoWindow: false
-    };
+    this.mapRef = React.createRef();
   }
 
   componentDidMount() {
-    fetch(
-      "https://opendata.arcgis.com/datasets/f72ebe741e3b4f0db376b4e765728339_0.geojson"
-    )
-      .then((res) => res.json())
-      .then((data) => this.setState({ fires: data.features }));
+    // lazy load the required ArcGIS API for JavaScript modules and CSS
+    loadModules(["esri/Map", "esri/views/MapView"], { css: true }).then(
+      ([ArcGISMap, MapView]) => {
+        const map = new ArcGISMap({
+          basemap: "topo-vector"
+        });
+
+        this.view = new MapView({
+          container: this.mapRef.current,
+          map: map,
+          center: [-118, 34],
+          zoom: 8
+        });
+      }
+    );
   }
 
-  handleClick = (props, polygon) => {
-    const paths = polygon.getPaths().getArray();
-    const coordinates = paths.map((path) => {
-      const points = path.getArray();
-      return points.map((point) => [point.lng(), point.lat()]);
-    });
-
-    polygon.setOptions({
-      fillColor: "#6B352A",
-      strokeColor: "#BF5E4B",
-      strokeOpacity: 1.0,
-      fillOpacity: 0.9,
-      strokeWeight: 1.8
-    });
-
-    if (this.state.activePoly !== null) {
-      this.state.activePoly.setOptions({
-        fillColor: "#BF5E4B",
-        fillOpacity: 0.45,
-        strokeColor: "#6B352A",
-        strokeOpacity: 0.9,
-        strokeWeight: 1
-      });
+  componentWillUnmount() {
+    if (this.view) {
+      // destroy the map view
+      this.view.destroy();
     }
-
-    this.setState({
-      activePoly: polygon,
-      showingInfoWindow: true
-    });
-
-    return {
-      type: "Polygon",
-      coordinates
-    };
-  };
-
-  displayFires() {}
+  }
 
   render() {
-    return <div className="mapBox"></div>;
+    return <div className="webmap" ref={this.mapRef} />;
   }
 }
 
