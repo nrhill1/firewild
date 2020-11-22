@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import CenterContainer from './containers/CenterContainer.js';
-import LeftSidebar from './containers/LeftSidebar.js';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import CenterContainer from "./containers/CenterContainer.js";
+import LeftSidebar from "./containers/LeftSidebar.js";
+import { Link } from "react-router-dom";
 // import jwt_decode from 'jwt-decode';
-
+import { h1 } from "calcite-react/Elements";
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       login: false,
-      user: ''
-    }
+      user: ""
+    };
 
-    this.handleLogout = this.handleLogout.bind(this)
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   /*
@@ -38,31 +38,32 @@ class App extends Component {
   handleLogout() {
     this.setState({
       login: false,
-      user: ''
-    })
-    localStorage.clear()
-    window.location.reload(false)
+      user: ""
+    });
+    localStorage.clear();
+    window.location.reload(false);
   }
 
   render() {
     return (
-        <div className="app">
-          <header>
-            <Link className="headerLink" to='/'><h1>FireWild</h1></Link>
-          </header>
-          <div className="leftSidebar">
-            <LeftSidebar
-            handleLogout = {this.handleLogout}
-            login = {this.state.login}
-            user = {this.state.user} />
-          </div>
-          <div className="centerContainer">
-            <CenterContainer
-            login = {this.state.login}
-            user = {this.state.user} />
-          </div>
+      <div className="app">
+        <header>
+          <Link className="headerLink" to="/">
+            <h1>FireWild</h1>
+          </Link>
+        </header>
+        <div className="leftSidebar">
+          <LeftSidebar
+            handleLogout={this.handleLogout}
+            login={this.state.login}
+            user={this.state.user}
+          />
         </div>
-    )
+        <div className="centerContainer">
+          <CenterContainer login={this.state.login} user={this.state.user} />
+        </div>
+      </div>
+    );
   }
 }
 
