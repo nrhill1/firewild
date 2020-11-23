@@ -26,10 +26,8 @@ class FireMap extends Component {
       const fireLayer = new FeatureLayer({
         url:
           "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/Public_Wildfire_Perimeters_View/FeatureServer/0/query?outFields=*&where=1%3D1",
-        outFields: ["IncidentName"],
-        popupTemplate: {
-          title: `"IncidentName"`
-        }
+        outFields: ["*"],
+        popupTemplate: {}
       });
       map.add(fireLayer);
 
