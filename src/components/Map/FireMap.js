@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { loadModules } from "esri-loader";
+import { V4MAPPED } from "dns";
 
 class FireMap extends Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class FireMap extends Component {
         url:
           "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/Public_Wildfire_Perimeters_View/FeatureServer/0/query?outFields=*&where=1%3D1"
       });
+      map.add(fireLayer);
 
       this.view = new MapView({
         container: this.mapRef.current,
