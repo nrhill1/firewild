@@ -16,6 +16,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### Link to the app:
+## Link to the app:
 Click the link to see the main page in deployment (all sidebar links aside from FireMap are broken): 
 [http://firewild.netlify.app](http://firewild.netlify.app)
