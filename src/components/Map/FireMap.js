@@ -10,7 +10,7 @@ class FireMap extends Component {
   componentDidMount() {
     // lazy load the required ArcGIS API for JavaScript modules and CSS
     loadModules(
-      ["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"],
+      ["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer", "esri/PopupTemplate"],
       { css: true }
     ).then(([ArcGISMap, MapView, FeatureLayer]) => {
       const map = new ArcGISMap({
@@ -24,13 +24,19 @@ class FireMap extends Component {
         zoom: 8
       });
 
+      var fireTemplate = {
+        title: function(event) {
+          const { graphic } = event
+          return `${graphic.attributes.IncidentName} Fire`
+        }
+      }
+
+
       const fireLayer = new FeatureLayer({
         url:
           "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/Public_Wildfire_Perimeters_View/FeatureServer/0/query?outFields=*&where=1%3D1",
         outFields: ["*"],
-        popupTemplate: {
-          title: `${this.fireLayer.IncidentName}`
-        }
+        popupTemplate: fireTemplate 
       });
       map.add(fireLayer);
     });
