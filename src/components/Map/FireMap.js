@@ -32,8 +32,9 @@ class FireMap extends Component {
 				},
 				content: function(event) {
 					const { graphic } = event;
-					return `Acres: ${graphic.attributes.GISAcres} \n        
-            Last Updated: ${graphic.attributes.DateCurrent}`;
+					return (
+						'Acres: ' + graphic.attributes.GISAcres + '\nLast Updated: ' + graphic.attributes.DateCurrent
+					);
 				}
 			};
 
