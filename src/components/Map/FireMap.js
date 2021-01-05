@@ -27,7 +27,17 @@ class FireMap extends Component {
       var fireTemplate = {
         title: function(event) {
           const { graphic } = event
-          return `${graphic.attributes.IncidentName} Fire`
+          if (graphic.attributes.IncidentName){
+            return (`${graphic.attributes.IncidentName} Fire`)
+          }
+        },
+        content: function(event) {
+          const { graphic } = event
+          return (
+            `Acres: ${graphic.attributes.GISAcres}         
+            
+            Last Updated: ${graphic.attributes.DateCurrent}`
+          )
         }
       }
 
