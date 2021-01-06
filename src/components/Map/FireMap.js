@@ -33,9 +33,9 @@ class FireMap extends Component {
 				content: function(event) {
 					const { graphic } = event;
 					return (
-						'<u>Acres:</u> ' 
+						'<b><u>Acres:</u></b> ' 
 						+ graphic.attributes.GISAcres.toFixed(2) + '<br/>'
-						+ '<u>Last Updated:</u> ' 
+						+ '<b><u>Last Updated:</u></b> ' 
 						+ `${Date(graphic.attributes.DateCurrent)}`
 					);
 				}
