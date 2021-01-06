@@ -32,9 +32,9 @@ html {
 }
 
 .centerContainer:hover {
-  box-shadow: 1px 4px 5px 4px rgba(202, 7, 7, 0.61);
-  -webkit-box-shadow: 1px 4px 5px 4px rgba(202, 7, 7, 0.61);
-  -moz-box-shadow: 1px 4px 5px 4px rgba(202, 7, 7, 0.61);
+  box-shadow: 3px 4px 5px 4px rgba(202, 7, 7, 0.61);
+  -webkit-box-shadow: 3px 4px 5px 4px rgba(202, 7, 7, 0.61);
+  -moz-box-shadow: 3px 4px 5px 4px rgba(202, 7, 7, 0.61);
   transition: left 750ms ease-in-out, right 200ms ease-in-out;
   transition: box-shadow 0.3s ease-in-out;
 }
@@ -180,6 +180,10 @@ nav ul {
 
 .mapBox {
   text-align: center;
+}
+
+.popupList {
+  text-align: left;
 }
 
 .profile h2 {
