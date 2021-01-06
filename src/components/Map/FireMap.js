@@ -27,7 +27,7 @@ class FireMap extends Component {
 				title: function(event) {
 					const { graphic } = event;
 					if (graphic.attributes.IncidentName) {
-						return `${graphic.attributes.IncidentName} Fire`;
+						return `<b><u>${graphic.attributes.IncidentName} Fire</u></b>`;
 					}
 				},
 				content: function(event) {
