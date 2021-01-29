@@ -31,13 +31,14 @@ class FireMap extends Component {
 					}
 				},
 				content: function(event) {
-          const { graphic } = event;
-          var updatedLast = new Date(graphic.attributes.DateCurrent)
+					const { graphic } = event;
+					var updatedLast = new Date(graphic.attributes.DateCurrent);
 					return (
-						'<b><u>Acres:</u></b> ' 
-						+ graphic.attributes.GISAcres.toFixed(2) + '<br/>'
-						+ '<b><u>Last Updated:</u></b> ' 
-            + `${updatedLast}`
+						'<b><u>Acres:</u></b> ' +
+						graphic.attributes.GISAcres.toFixed(2) +
+						'<br/>' +
+						'<b><u>Last Updated:</u></b> ' +
+						`${updatedLast}`
 					);
 				}
 			};
